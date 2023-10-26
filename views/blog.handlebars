@@ -5,24 +5,21 @@
   <p>
    {{content}}
   </p>
-  <p>Created by {{user.name}} on {{format_date date_created}}</p>
+  <p>Posted by {{user.name}} on {{format_date date_created}}</p>
   <h3>Comments</h3>
   {{#each comments as |comment| }}
-  <p>{{comment.user.name}}</p>
+  <p>{{comment.user.name}}:</p>
   <p>{{comment.content}}</p>
   <p>{{format_date date_created}}</p>
   {{/each}}
   {{#if logged_in}}
   <form class = "comment-form">
     <input class = "content">
-    <button type = "submit">
-      Add Comment
+    <button class="btn btn-sm btn-info" type = "submit">
+      Post
     </button>
   </form>
   {{/if}}
-  {{!-- <p>
-    <button class="btn btn-primary">Fund this Project!</button>
-  </p> --}}
 </div>
 
 <script src="/js/comment.js"></script>
